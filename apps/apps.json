@@ -178,5 +178,11 @@
         "name": "Vaultwarden",
         "repo": "https://github.com/dani-garcia/vaultwarden",
         "version": "1.24.0"
+    },
+    {
+        "id": "zerotier-ztncui",
+        "name": "ZeroTier & ztncui",
+        "repo": "https://github.com/key-networks/ztncui-aio",
+        "version": "1.2.11"
     }
 ]

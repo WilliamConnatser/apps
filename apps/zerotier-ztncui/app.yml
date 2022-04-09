@@ -1,0 +1,50 @@
+
+# yaml-language-server: $schema=../../app-standard-v3.yml
+
+version: 3
+metadata:
+  category: Networking
+  name: ZeroTier & ztncui
+  version: 1.2.11
+  tagline: Securely Connect Any Device, Anywhere
+  description: >
+
+    A standalone ZeroTier network controller with a web user interface.
+    
+    ZeroTier combines the capabilities of VPN and SD-WAN, simplifying network management.
+
+    Enjoy flexibility while avoiding costly hardware vendor lock in. 
+
+    SPEED ⏁ Set up ZeroTier in minutes with remote, automated deployment.
+
+    FLEXIBILITY ⏁ Emulates Layer 2 Ethernet with multipath, multicast, and bridging capabilities.
+
+    SECURITY ⏁ ZeroTier’s zero-trust networking solution provides scalable security with 256-bit end-to-end encryption.
+  developer: Key Networks
+  website: https://key-networks.com
+  dependencies: []
+  repo: https://github.com/key-networks/ztncui-aio
+  support: https://github.com/key-networks/ztncui-aio/issues
+  gallery:
+    - 1.jpg
+    - 2.jpg
+    - 3.jpg
+containers:
+  - name: main
+    image: keynetworks/ztncui:1.2.11@sha256:d65638287ab8429fa0ad6cdc57a8ab3e74fb0dcae6e81ffdc42c25ab88a55f05
+    restart: on-failure
+    stop_grace_period: 1m 
+    requiredPorts:
+      - 9993
+      - 3443
+      - 3180
+    port: 3001
+    environment:
+      NODE_ENV: production
+      HTTPS_PORT: 3443
+      HTTP_PORT: 3000
+      ZTNCUI_PASSWD: password
+      MYDOMAIN: ztncui.docker.test
+    data:
+      - /data/ztncui:/opt/key-networks/ztncui/etc
+      - /data/zt1:/var/lib/zerotier-one

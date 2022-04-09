@@ -320,4 +320,4 @@ containers:
       - lnd
 ```
 
-Now, you got an app.yml ready. To get it addded to Citadel, submit a PR to this repo: https://github.com/runcitadel/apps
+Now, you got an app.yml ready. To get it added to Citadel, submit a PR to this repo: https://github.com/runcitadel/apps
