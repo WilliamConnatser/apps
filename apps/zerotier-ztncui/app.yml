@@ -29,6 +29,7 @@ metadata:
     - 1.jpg
     - 2.jpg
     - 3.jpg
+  defaultPassword: $APP_SEED
 containers:
   - name: main
     image: keynetworks/ztncui:1.2.11@sha256:d65638287ab8429fa0ad6cdc57a8ab3e74fb0dcae6e81ffdc42c25ab88a55f05
@@ -43,7 +44,7 @@ containers:
       NODE_ENV: production
       HTTPS_PORT: 3443
       HTTP_PORT: 3001
-      ZTNCUI_PASSWD: password
+      ZTNCUI_PASSWD: $APP_SEED
       MYDOMAIN: ztncui.docker.test
     data:
       - /data/ztncui:/opt/key-networks/ztncui/etc
