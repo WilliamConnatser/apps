@@ -42,7 +42,7 @@ containers:
     environment:
       NODE_ENV: production
       HTTPS_PORT: 3443
-      HTTP_PORT: 3000
+      HTTP_PORT: 3001
       ZTNCUI_PASSWD: password
       MYDOMAIN: ztncui.docker.test
     data:
